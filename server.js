@@ -1,6 +1,8 @@
 const express = require("express")
 const pug = require("pug")
 
+const port =process.env.PORT || 3000
+
 
 const app = express()
 app.set("view engine","pug")
@@ -24,6 +26,8 @@ app.get("/", (req,res)=>{
     })
 
 })
-console.log("listening on port 5000");
 
-app.listen(5000)
+app.listen(port, ()=>{
+    console.log(`Server running on port ${port}`);
+    
+})
